@@ -17,6 +17,10 @@ Follow the steps. Only show the result of step 3 to your partner
   }
 `;
 
-export const parseVariableFromText = (text: string): VariableCase => {
-  return JSON.parse(text);
+export const parseVariableFromText = (text: string): VariableCase | null => {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
 };

@@ -30,11 +30,12 @@ export default function Command() {
     });
 
     if (!response.choices[0].message.content) {
+      showToast({ title: "Empty Response", message: "Failed to get response from OpenAI. Please try again" });
       return;
     }
 
     // remove line breaks
-    const jsonData = response.choices[0].message.content.replace(/\n/g, "").match(/\{.*\}/)?.[0] ?? '';
+    const jsonData = response.choices[0].message.content.replace(/\n/g, "").match(/\{.*\}/)?.[0] ?? "";
     const json = parseVariableFromText(jsonData);
     if (!json) {
       showToast({ title: "JSON Parsing Error", message: "Failed to parse variable from text. Please try again" });
