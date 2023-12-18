@@ -1,0 +1,50 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "naming-var",
+  "title": "Naming VAR",
+  "description": "Naming Variable Name to English",
+  "icon": "command-icon.png",
+  "author": "mobius29",
+  "categories": [
+    "Developer Tools"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "namingVAR",
+      "title": "Naming Variable",
+      "description": "Naming Variable Name to 4-cases",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.3",
+    "openai": "^4.23.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  },
+  "preferences": [
+    {
+      "name": "API_Key",
+      "key": "API Key",
+      "title": "API Key",
+      "description": "Open AI API Key",
+      "type": "textfield",
+      "defaultValue": "",
+      "required": true
+    }
+  ]
+}
