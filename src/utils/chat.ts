@@ -2,7 +2,9 @@ import { VariableCase } from "../types/variable";
 
 export const makePrompt = (variable: string) => `
 Follow the steps. Only show the JSON result of step 3 to your partner
-1. Recommend a variable name in english for text ${variable}. If name has 4 or more words, summarize it.
+1. Recommend a variable name for text "${variable}".
+  If text is not English, translate it to English first.
+  If name has 4 or more words, summarize it.
 2. Make it a variable name to be used in the following cases.
     snake_case:
     camelCase:
