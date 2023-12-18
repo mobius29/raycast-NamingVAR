@@ -11,8 +11,8 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "namingVAR",
-      "title": "Naming Variable",
+      "name": "index",
+      "title": "Naming VAR",
       "description": "Naming Variable Name to 4-cases",
       "mode": "view"
     }
