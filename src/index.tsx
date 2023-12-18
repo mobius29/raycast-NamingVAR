@@ -29,12 +29,13 @@ export default function Command() {
       messages: [{ role: "user", content }],
     });
 
-    console.log(response.choices[0].message.content);
     if (!response.choices[0].message.content) {
       return;
     }
 
-    const json = parseVariableFromText(response.choices[0].message.content);
+    // remove line breaks
+    const jsonData = response.choices[0].message.content.replace(/\n/g, "").match(/\{.*\}/)?.[0] ?? '';
+    const json = parseVariableFromText(jsonData);
     if (!json) {
       showToast({ title: "JSON Parsing Error", message: "Failed to parse variable from text. Please try again" });
       return;
